@@ -1,11 +1,10 @@
-
 name: fetch and push xrefs
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  # workflow_dispatch:
 
 jobs:
   build-and-deploy-spec:
@@ -28,7 +27,7 @@ jobs:
           echo "start fetching xrefs"
           node -e "require('spec-up-t/src/get-xrefs-data.js').getXrefsData()"
           rm -rf node_modules
-      
+
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -38,5 +37,3 @@ jobs:
           git add .
           git commit -m "Update Xrefs data via Github Action" || echo "No changes to commit"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:refs/heads/main
-
-          
