@@ -1,4 +1,4 @@
-name: spec-up-t render
+name: spec-up-t publish
 
 on:
   push:
@@ -29,9 +29,8 @@ jobs:
           echo "end install"
           echo "Spec-Up-T version:"
           npm list spec-up-t
-          echo "start render"
-          node -e "require('spec-up-t')({ nowatch: true })"
-          echo "end render"
+          echo "start publish"
+          npm run publish
           rm -rf node_modules
 
       # This is a GitHub Action to deploy your static files to GitHub Pages
