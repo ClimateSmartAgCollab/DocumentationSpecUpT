@@ -11,8 +11,8 @@
         "example-markup-in-markdown.md",
         "outro.md"
       ],
-      "logo": "https://climatesmartagrifood.ca/images/climate_smart.PNG",
-      "logo_link": "https://climatesmartagrifood.ca/",
+      "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
+      "logo_link": "https://github.com/blockchainbird/spec-up-t",
       "source": {
         "host": "github",
         "account": "ClimateSmartAgCollab",
